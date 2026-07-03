@@ -16,21 +16,33 @@ def generate_courier_data():
 
 
 COURIER_WITHOUT_LOGIN = {
-    "password": "1234",
-    "firstName": "Ivan"
+    "password": "3333",
+    "firstName": "Sidor"
 }
 
 
 COURIER_WITHOUT_PASSWORD = {
-    "login": "ivan"
+    "login": "Sidor"
 }
 
 
 LOGIN_WITHOUT_LOGIN = {
-    "password": "1234"
+    "password": "3333"
 }
 
 
 LOGIN_WITHOUT_PASSWORD = {
-    "login": "ivan"
+    "login": "Sidor"
+}
+
+
+ORDER_DATA = {
+    "firstName": "Rajan",
+    "lastName": "Gosling",
+    "address": "Tambov",
+    "metroStation": 3,
+    "phone": "+7 800 555 35 35",
+    "rentTime": 3,
+    "deliveryDate": "2026-07-07",
+    "comment": "Spasibo towarisch"
 }
