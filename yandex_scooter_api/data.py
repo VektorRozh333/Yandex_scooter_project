@@ -24,3 +24,13 @@ COURIER_WITHOUT_LOGIN = {
 COURIER_WITHOUT_PASSWORD = {
     "login": "ivan"
 }
+
+
+LOGIN_WITHOUT_LOGIN = {
+    "password": "1234"
+}
+
+
+LOGIN_WITHOUT_PASSWORD = {
+    "login": "ivan"
+}

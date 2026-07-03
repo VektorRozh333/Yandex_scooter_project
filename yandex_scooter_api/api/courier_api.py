@@ -13,6 +13,14 @@ class CourierAPI:
 
 
     @staticmethod
+    def login_courier(payload):
+        return requests.post(
+            api.urls.LOGIN_COURIER,
+            json=payload
+        )
+
+
+    @staticmethod
     def delete_courier(courier_id):
         return requests.delete(
             api.urls.CREATE_COURIER
