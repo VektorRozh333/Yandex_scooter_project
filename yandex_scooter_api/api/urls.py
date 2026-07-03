@@ -5,3 +5,5 @@ CREATE_COURIER = f'{BASE_URL}/api/v1/courier'
 LOGIN_COURIER = f'{BASE_URL}/api/v1/courier/login'
 
 CREATE_ORDER = f'{BASE_URL}/api/v1/orders'
+
+GET_ORDERS = f'{BASE_URL}/api/v1/orders'
