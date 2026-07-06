@@ -6,37 +6,35 @@ from selenium.webdriver.support.ui import WebDriverWait
 
 class TestLogoPage:
     
-    @allure.title("Проверка перехода через кнопки заказа и логотипа")
+    @allure.title("Проверка перехода через кнопку заказа и логотип Самоката")
     def test_logo_is_avaliable(self, driver):
         logo_page = LogoPage(driver)
 
-        with allure.step('Открытие главной страницы'):
-            logo_page.open(data.BASE_URL)
+        logo_page.open(data.BASE_URL)
 
         with allure.step('Принятие cookie'):
             logo_page.accept_cookie()
-
-        with allure.step('Переход через верхнюю кнопку заказа'):
-            logo_page.click_on_order_logo()
-
-        with allure.step('Нажатие на логотип Самоката'):
+        
+        with allure.step('переход на заказ и обратно'):
+            logo_page.click_on_order_button()
             logo_page.click_on_scooter_logo()
 
-        with allure.step('Проверка перехода на главную страницу'):
-            assert driver.current_url == data.BASE_URL
+        with allure.step(f"Проверка, что текущий URL равен {data.BASE_URL}"):
+            assert driver.current_url == data.BASE_URL, f"Expected {data.BASE_URL}, but got {driver.current_url}"
 
 
-    @allure.title("При клике на логотип Яндекса происходит переход на стартовую страницу браузера")
-    def test_logo_click_on_yandex_logo(self, driver):
-        logo_page = LogoPage(driver)
+    @allure.title('Проверка логотипа Яндекса')
+    def test_yandex_logo(self, driver):
 
         with allure.step('Открытие главной страницы'):
-            logo_page.open(data.BASE_URL)
+            driver.get(data.BASE_URL)
+
+        logo_page = LogoPage(driver)
 
         with allure.step('Принятие cookie'):
             logo_page.accept_cookie()
 
-        with allure.step('Клик на логотип Яндекса'):
+        with allure.step('Нажатие на логотип Яндекса'):
             logo_page.click_on_yandex_logo()
 
         with allure.step('Ожидание открытия новой вкладки'):
@@ -56,3 +54,4 @@ class TestLogoPage:
             print(driver.current_url)
             assert 'ya.ru' in driver.current_url.lower() or \
                 'dzen' in driver.current_url.lower()
+        

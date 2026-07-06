@@ -18,7 +18,7 @@ class BasePage(ABC):
     @allure.step('Проверка названия сайта')
     def get_title(self):
         return self.driver.title
-    
+
 
     @allure.step('Ожидание элемента')
     def wait_element(self, locator):
@@ -37,7 +37,6 @@ class BasePage(ABC):
     @allure.step('Клик по элементу')
     def click(self, locator):
         self.wait_clickable(locator).click()
-    
 
     @allure.step('Ввод текста')
     def send_keys(self, locator, text):
@@ -51,4 +50,3 @@ class BasePage(ABC):
             "arguments[0].scrollIntoView(true);",
             element
         )
-        
